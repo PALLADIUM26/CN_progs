@@ -10,10 +10,12 @@ int main() {
 	int dl,r,i,j,k,z,c;
 	char buf[100];
 	memset(data,'\0',100);
-	printf("\n enter the data \n");	
+	printf("\n enter the data \n"); //in reverse order
 	scanf("%s",data);
 
 	dl=strlen(data);
+
+	//find the parity bit indexes
 	i=0;
 	while(1)
 	{
@@ -21,17 +23,23 @@ int main() {
 			break;
 		i++;	
 	}
+
+	//store string as int array
 	r=i;
 	printf("\n r is %d \n",r);
 	for(i=0;i<dl;i++)
 	{
 		data1[i]=data[i]-48;    
 	}
+
+	//store 999 at parity bit indexes
 	for(i=0;i<r;i++)
 		{
 			z=pow(2,i);
 			data2[z]=999;
 		}
+	
+	//store data bits at other indexes
 		j=0;
 	for(i=dl+r;i>=1;i--)
 	{
@@ -41,6 +49,7 @@ int main() {
 			}    
 	}
 	
+	//generate the hamming code
 	for(i=0;i<r;i++)
 	{
 		z=pow(2,i);
