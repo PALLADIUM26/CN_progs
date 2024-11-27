@@ -6,7 +6,7 @@ int main() {
 	char data[100];
 	int data1[100],data2[100];
 	int dl,r,i,j,k,z,c,l;
-	printf("\n enter the received data \n");	
+	printf("\n enter the received data \n");	//forward order
 	scanf("%s",data);
 
 	dl=strlen(data);
